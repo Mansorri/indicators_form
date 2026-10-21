@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Облік показників електроенергії</title>
+
+  <link href="style.css" rel="stylesheet">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <main class="wrap">
+    <header>
+      <div>
+        <h1>Облік показників</h1>
+        <div class="muted">
+          Електроенергія - <span id="period"></span>
+        </div>
+      </div>
+      <span class="pill" id="totalCount">73 особи</span>
+    </header>
+
+    <section class="panel" aria-label="Прогрес заповнення">
+      <div class="progress-top">
+        <div>
+          <div class="muted">Заповнено серед активних осіб</div>
+          <strong id="progressCount">0 / 0</strong>
+        </div>
+        <strong id="percent">0%</strong>
+      </div>
+
+      <div class="track">
+        <div id="progressBar"></div>
+      </div>
+
+      <div class="muted">
+        Особи зі статусом «ДТЕК» не потребують показників
+        і не враховуються в прогресі.
+      </div>
+    </section>
+
+    <div class="toolbar">
+      <input
+        id="search"
+        type="search"
+        placeholder="Пошук за номером, ПІБ, адресою або лічильником"
+        aria-label="Пошук особи"
+      >
+
+      <select id="filter" aria-label="Фільтр за статусом">
+        <option value="all">Усі особи</option>
+        <option value="done">Заповнено</option>
+        <option value="todo">Не заповнено</option>
+        <option value="dtek">ДТЕК</option>
+      </select>
+    </div>
+
+    <div class="muted" id="results" style="margin-bottom:12px"></div>
+
+    <section id="list" class="list" aria-label="Список осіб"></section>
+
+    <nav class="pager" aria-label="Сторінки списку">
+      <button id="prev" type="button">← Назад</button>
+      <span id="pageInfo" class="muted"></span>
+      <button id="next" type="button">Далі →</button>
+    </nav>
+
+    <aside class="system-info" aria-label="Інформація про систему">
+      <div class="system-info__heading">
+        <span class="system-info__icon" aria-hidden="true">⚡</span>
+        <strong>Облік електроенергії - Приозерне</strong>
+      </div>
+
+      <p>
+        Система призначена для централізованого внесення
+        та обліку показників електролічильників.
+        Дані впорядковуються за особами, адресами
+        та обліковими періодами.
+      </p>
+    </aside>
+</body>
+</html>
